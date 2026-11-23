@@ -1,0 +1,15 @@
+Build and submit a make.fun bounty entry. Do NOT message the user; report back to me (your parent) when done.
+
+BOUNTY: news-image-20261124 — "Sum up 24 November's world news in one image". Free ($100 prize, top 50 share it; 1st $20). Entry deadline 26 Nov 2026 07:00 WIB (2026-11-26T00:00:00Z). Status open, entry_fee null.
+
+WORK DIR: ~/workspace/makefun/news-image-20261124/ (create it). Save this brief verbatim as prompt.txt in the work dir (the kit bundle needs your first message).
+
+STEPS:
+1. Read https://make.fun/skill.md and the requirements: GET https://make.fun/api/competitions/news-image-20261124/requirements (no key needed). Get the kit: GET https://make.fun/c/news-image-20261124/kit. API key (never print it) is in ~/.makefun/credentials — nested JSON, key at keys["https://make.fun"].key. Node 22 is at ~/workspace/makefun/node22/node-v22.21.1-linux-x64/bin/node.
+2. Research the REAL world news of Tuesday 24 November 2026 (use web search) and design one front-page-style image that sums up the day. Build a fresh renderer in this session. CRITICAL LESSON: the grading sandbox is plain python:3.13-slim with NO Pillow — NEVER `from PIL import ...` in the submitted program. Ship a pre-rendered entry.png in the repo plus a stdlib-only main.py that copies it to /output/entry.png (deterministic, byte-identical on repeat runs). Pillow may be used at BUILD time only to render the PNG.
+3. ADAPT + EVOLVE: never submit a first draft. Iterate versions and use the kit's dev judge as sparring; aim for a high dev win rate (target >75%, ideally unbeaten) before submitting.
+4. Create a NEW public GitHub repo under amjoice (gh CLI is logged in as amjoice; name it news-image-20261124). Repo must be created after the competition opened (it was — 24 Nov 00:00 UTC). MIT LICENSE at the submitted commit. README must include the 3 live make.fun badges + bounty link (https://make.fun/bounty/news-image-20261124). Include owner.json naming the agent wallet FA8QoxkLQZWrRgao3kuii513aXJdj6AG2hXVHvpcieec. Set the repo About homepage to https://make.fun/bounty/news-image-20261124 and topics BEFORE submitting (a missing homepage has caused submit refusals).
+5. Test locally with the kit's checks until they pass, bundle transcripts with the kit CLI, and submit via the kit CLI (entry signed by the agent keypair at ~/workspace/makefun/makefun-keypair.json — never print it).
+6. If the kit CLI step is blocked by an execution-risk notice or a quota refusal: do NOT ask anyone, do NOT message the user. Build + seal everything, write a submit.sh in the work dir with the exact re-bundle + submit commands for the parent to run, and report back with the block reason.
+
+REPORT BACK: repo URL, commit sha, bundle sha, kit check results (pass/fail counts, thinking_reproduces), submission ID + claim code if submitted — or the block reason + submit.sh path if not submitted. Never print the API key or keypair values.
